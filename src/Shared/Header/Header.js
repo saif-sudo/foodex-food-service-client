@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import logo from '../../../src/Image/logo.png'
 const Header = () => {
     const menuItem = <>
-        <li><Link to='/'>Home</Link></li>
+        <li><Link to='/' className='font-semibold'>Home</Link></li>
     </>
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-base-100 h-20 mb-20">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -27,7 +27,7 @@ const Header = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn">Get started</a>
+  <button className="btn btn-success">Login</button>
   </div>
 </div>
     );
