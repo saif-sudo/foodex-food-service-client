@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     const handleLogin = event => {
@@ -20,15 +21,16 @@ const Login = () => {
                 <label className="label">
                   <span className="label-text">Email</span>
                 </label>
-                <input type="text" placeholder="email" className="input input-bordered" />
+                <input type="text" name="email" placeholder="email" className="input input-bordered" />
               </div>
+              
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Password</span>
                 </label>
-                <input type="text" placeholder="password" className="input input-bordered" />
+                <input name= "password" type="text" placeholder="password" className="input input-bordered" />
                 <label className="label">
-                  <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                  <a href="/forgetpassword" className="label-text-alt link link-hover">Forgot password?</a>
                 </label>
               </div>
               <div className="form-control mt-6">
@@ -36,6 +38,7 @@ const Login = () => {
                 
               </div>
             </form>
+            <p className='p-5'>If you don't have an account ? <Link className="text-orange-600 font-bold" to="/signup">Sign Up</Link></p>
           </div>
         </div>
       </div>
