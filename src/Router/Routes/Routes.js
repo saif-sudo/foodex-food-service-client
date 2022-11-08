@@ -2,6 +2,7 @@ import Main from "../../Layout/Main";
 import Home from "../../Pages/Home/Home";
 import ServiceFullDetails from "../../Pages/Home/Services/ServiceFullDetails";
 import Services from "../../Pages/Home/Services/Services";
+import Login from "../../Pages/Login/Login";
 
 const { createBrowserRouter } = require("react-router-dom");
 
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
                     //loader: ({params}) => fetch(`https://learn-tech-server-theta.vercel.app/courses/${params.id}`)
                         },
         ]
+    },
+    {
+      path:'/login',
+      element:<Login></Login>
     }
       
     
