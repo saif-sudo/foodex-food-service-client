@@ -16,10 +16,11 @@ const Services = () => {
                 <p>This is Our Populer Services. We Try to make sure Good Services All Time</p>
                 
             </div>
-            <div>
+            <div className='grid gap-6 grid-cold-1 md:grid-cols-2 lg:grid-cols-3'>
             {
                     services.map(service => <ServiceCard
                         key={service._id}
+                        service={service}
                     ></ServiceCard> )
                 }
             </div>
