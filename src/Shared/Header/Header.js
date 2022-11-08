@@ -18,7 +18,8 @@ const Header = () => {
     </div>
     <Link  to="/" className="btn btn-ghost normal-case text-xl">
 
-        <img width="150" height="150" src={logo} alt=""/>
+        <img width="150" height="150" src={logo} alt=""/><br/>
+        <h1>Foodex</h1>
     </Link>
   </div>
   <div className="navbar-center hidden lg:flex">
