@@ -1,6 +1,7 @@
 import Main from "../../Layout/Main";
 import addToService from "../../Pages/addToService/addToService";
 import Home from "../../Pages/Home/Home";
+import ServiceAll from "../../Pages/Home/Services/ServiceAll";
 import ServiceFullDetails from "../../Pages/Home/Services/ServiceFullDetails";
 import Services from "../../Pages/Home/Services/Services";
 import Login from "../../Pages/Login/Login";
@@ -19,9 +20,9 @@ const router = createBrowserRouter([
       },
       {
         path: '/services',
-    element: <Services></Services>,
+    element: <ServiceAll></ServiceAll>,
    
-        children:[
+      /*  children:[
             {
                 path: '/services',
             element: <Services></Services>,
@@ -30,13 +31,14 @@ const router = createBrowserRouter([
                 },
           
               
-                    {
-                        path: '/services/:id',
-                    element: <ServiceFullDetails></ServiceFullDetails>,
-                    //loader: ({params}) => fetch(`https://learn-tech-server-theta.vercel.app/courses/${params.id}`)
-                        },
-        ]
+                   
+        ]*/
     },
+    {
+      path: '/services/:id',
+  element: <ServiceFullDetails></ServiceFullDetails>,
+  loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`),
+      },
     {
       path:'/login',
       element:<Login></Login>
