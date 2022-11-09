@@ -1,4 +1,5 @@
 import Main from "../../Layout/Main";
+import addToService from "../../Pages/addToService/addToService";
 import Home from "../../Pages/Home/Home";
 import ServiceFullDetails from "../../Pages/Home/Services/ServiceFullDetails";
 import Services from "../../Pages/Home/Services/Services";
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
     {
       path:'/signup',
       element:<SignUp></SignUp>
+    },
+    {
+      path:'/addtoservice/:id',
+      element:<addToService></addToService>
     }
       
     
