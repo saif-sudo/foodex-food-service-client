@@ -2,14 +2,14 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 
 const ServiceFullDetails = () => {
-    const {title,image_url,details,category_id}= useLoaderData();
+    const {title,image,details,price}= useLoaderData();
     return (
         <div>
-        <figure><img src={image_url} alt="Shoes" /></figure>
+        <figure><img src={image} alt="Shoes" /></figure>
         <div className="card-body">
           <h2 className="card-title">
             {title}<br/>
-            Price:${category_id}
+            Price:${price}
            
           </h2>
           <p>

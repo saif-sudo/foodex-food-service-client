@@ -2,15 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const ServiceCard = ({service}) => {
-        const {title,image_url,details,_id,category_id} = service
+        const {title,image,details,_id,price} = service
     return (
         <div>
             <div className="card w-96 bg-base-100 shadow-xl">
-  <figure><img src={image_url} alt="Shoes" /></figure>
+  <figure><img src={image} alt="Shoes" /></figure>
   <div className="card-body">
     <h2 className="card-title">
       {title}<br/>
-      Price:${category_id}
+      Price:${price}
      
     </h2>
     <p>

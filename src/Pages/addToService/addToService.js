@@ -1,8 +1,61 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useLoaderData } from 'react-router-dom';
 
 const AddToService = () => {
+    //const [service ,setService] = useState({});
+    //const [_id] = useLoaderData();
+   //const {addservice} = useContext(AuthContext);
+    const handleAddServices = event => {
+        event.preventDefault();
+        const form = event.target;
+        const title = form.title.value;
+        const details = form.desc.value;
+        const price = form.price.value;
+        const image = form.image.value;
+       
+       
+
+        const addservice = {
+          
+            title,
+            details,
+            price,
+            image
+           
+            
+
+        }
+        fetch('http://localhost:5000/services' , {
+            method: 'POST',
+            headers: {
+                'content-type' : 'application/json'
+            },
+            body: JSON.stringify(addservice)
+        })
+
+        .then(res => res.json())
+        .then(data => console.log(data))
+        .error(er => console.error(er))
+
+    }
+        
+       /* console.log(name, photoURL, email, password);
+
+        createUser(email, password)
+        .then( result => {
+            const user = result.user;
+            console.log(user);
+            setError('');
+            form.reset();
+            handleUpdateUserProfile(name, photoURL);
+        })
+        .catch(e => {
+            console.error(e);
+            setError(e.message);
+        });
+    }*/
     return (
-        <div className="hero min-h-screen bg-base-200">
+        <div>
               
               <div >
        <div className="text-center">
@@ -10,8 +63,8 @@ const AddToService = () => {
          
        </div>
 
-            <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <form  className="card-body">
+            <div >
+            <form  onSubmit={handleAddServices} className="card-body">
             <div className="form-control">
                 <label className="label">
                   <span className="label-text">Title:</span>
@@ -22,7 +75,7 @@ const AddToService = () => {
                 <label className="label">
                   <span className="label-text">Image:</span>
                 </label>
-                <input name="file" type="file" className="file-input w-full " />
+                <input name="image" type="file" className="file-input w-full " />
               </div>
               <div className="form-control">
                 <label className="label">
@@ -36,7 +89,7 @@ const AddToService = () => {
                   <span className="label-text">Description:</span>
                 </label>
                 
-                <textarea placeholder="desc" name='desc' className="textarea input input-bordered"></textarea>
+                <textarea placeholder="desc" name='desc' className="textarea textarea-bordered h-50 w-full"></textarea>
                
               </div>
               <div className="form-control mt-6">
@@ -48,7 +101,9 @@ const AddToService = () => {
           </div>
           </div >
         </div>
+        
     );
-};
+}
+
 
 export default AddToService;
