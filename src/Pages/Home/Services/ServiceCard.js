@@ -17,13 +17,13 @@ const ServiceCard = ({service}) => {
     {
                
                details.length > 100 ?
-               <p>{details.slice(0,100) + '...'}<Link className="font-bold text-orange-600" to={`/services/${_id}`}>Read More</Link></p>
+               <p>{details.slice(0,100) + '...'}</p>
                :
                <p>{details}</p>
              }
     </p>
     <div className="card-actions justify-end">
-    <button className="btn btn-primary">Add to Service</button>
+    <Link className="font-bold text-orange-600" to={`/services/${_id}`}> <button className="btn btn-primary">View Details</button></Link>
     </div>
   </div>
 </div>

@@ -20,7 +20,7 @@ const ServiceFullDetails = () => {
                 }
           </p>
           <div className="card-actions justify-end">
-          <button className="btn btn-primary">Add to Service</button>
+          
           </div>
         </div>
       </div>

@@ -73,9 +73,9 @@ const AddToService = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Image:</span>
+                  <span className="label-text">Image Url:</span>
                 </label>
-                <input name="image" type="file" className="file-input w-full " />
+                <input type="text" placeholder="image" name='image' className="input input-bordered" required/>
               </div>
               <div className="form-control">
                 <label className="label">
