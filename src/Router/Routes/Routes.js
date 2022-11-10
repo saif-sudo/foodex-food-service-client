@@ -6,7 +6,9 @@ import ServiceAll from "../../Pages/Home/Services/ServiceAll";
 import ServiceFullDetails from "../../Pages/Home/Services/ServiceFullDetails";
 
 import Login from "../../Pages/Login/Login";
-import SignUp from "../../Pages/SignUp/SignUp";
+import Register from "../../Pages/Register/Register";
+import Reviews from "../../Pages/Reviews/Reviews";
+
 
 const { createBrowserRouter } = require("react-router-dom");
 
@@ -45,12 +47,16 @@ const router = createBrowserRouter([
       element:<Login></Login>
     },
     {
-      path:'/signup',
-      element:<SignUp></SignUp>
+      path:'/register',
+      element:<Register></Register>
     },
     {
       path:'/addtoservice',
       element:<AddToService></AddToService>
+    },
+    {
+      path:'/reviews',
+      element:<Reviews></Reviews>
     }
       
     
