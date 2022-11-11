@@ -11,24 +11,34 @@ const Header = () => {
 }
     const menuItems = <>
         <li><Link to='/' className='font-semibold'>Home</Link></li>
+        <li><Link to='/blog' className='font-semibold'>Blog</Link></li>
         {
            user?.email ?
            <>
                
                <li><Link to='/services' className='font-semibold'>Services</Link></li>
-
+              
                <li className='font-semibold'>
-                 <button onClick={handleLogOut} className='btn-ghost'>SignOut</button>
+               <Link to='/addtoservice'>  <button >Add to Service</button></Link>
+               <Link to='/reviews'>  <button >Reviews</button></Link>
                </li>
+               
+               <div>
+               <li className='font-semibold'>
+                 <button onClick={handleLogOut} className='btn btn-primary'>SignOut</button>
+               </li>
+               </div>
+
+
            </>
            :
-           <li><Link to='/login' className='font-semibold'>Login</Link></li>
+           <Link to='/login' className='font-semibold'><button className='btn btn-primary'>Login</button></Link>
         }
         
     </>
     return (
         <div className="navbar bg-base-100 h-20 mb-20">
-  <div className="navbar-start">
+  <div>
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -37,20 +47,20 @@ const Header = () => {
         {menuItems}
       </ul>
     </div>
-    <Link  to="/" className="btn btn-ghost normal-case text-xl">
+    <Link  to="/" className=" normal-case text-xl">
 
         <img width="150" height="150" src={logo} alt=""/><br/>
-        <h1>Foodex</h1>
+        <h1 className='text-center font-bold'>Foodex</h1>
     </Link>
   </div>
+ 
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal p-0">
       {menuItems}
     </ul>
   </div>
-  <div className="navbar-end">
-  <button className="btn btn-success">Login</button>
-  </div>
+  
+  
 </div>
     );
 };

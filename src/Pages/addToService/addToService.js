@@ -34,10 +34,19 @@ const AddToService = () => {
         })
 
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => {
+          console.log(data)
+          if(data.acknowledged){
+              alert('Service added successfully');
+              form.reset();
+             
+          }
+      })
         .error(er => console.error(er))
 
     }
+
+    
         
        /* console.log(name, photoURL, email, password);
 
@@ -93,9 +102,20 @@ const AddToService = () => {
                
               </div>
               <div className="form-control mt-6">
-                <input className="btn btn-primary" value="Add to Service" type="submit"/>
+              <label htmlFor="my-modal-4" className='text-center'>    <input className="btn btn-primary" value="Add to Service" type="submit"/></label>
                 
               </div>
+              {/* The button to open modal */}
+
+
+{/* Put this part before </body> tag */}
+<input type="checkbox" id="my-modal-4" className="modal-toggle" />
+<label htmlFor="my-modal-4" className="modal cursor-pointer">
+  <label className="modal-box relative" htmlFor="">
+    <h3 className="text-lg text-success font-bold">Your Service Added Successfully</h3>
+    
+  </label>
+</label>
             </form>
             
           </div>

@@ -7,7 +7,7 @@ const Footer = () => {
           
           <p className="font-bold">
             <img src={logo} alt="logo" width="150" height="150" className="m-auto" />
-            ACME Industries Ltd. <br/>Providing reliable tech since 1992
+            Foodex Industries Ltd. <br/>Providing reliable Food Services From 2015
           </p> 
           <p>Copyright © 2022 - All right reserved</p>
         </div> 

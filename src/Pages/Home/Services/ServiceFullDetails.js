@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
+import 'react-photo-view/dist/react-photo-view.css';
 
 const ServiceFullDetails = () => {
     const {_id,title,image,price,details}= useLoaderData();
@@ -44,7 +46,9 @@ const ServiceFullDetails = () => {
 
     return (
         <div>
+          <PhotoProvider>
         <figure><img src={image} alt="Images" /></figure>
+        </PhotoProvider>
         <div className="card-body">
           <h2 className="card-title">
             {title}<br/>
