@@ -42,7 +42,7 @@ const router = createBrowserRouter([
     {
       path: '/services/:id',
   element: <ServiceFullDetails></ServiceFullDetails>,
-  loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`),
+  loader: ({params}) => fetch(`https://foodex-cloud-kitchen-server.vercel.app/services/${params.id}`),
       },
     {
       path:'/login',
